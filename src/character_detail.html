@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+</head>
+
+
+<body>
+
+    <div class="flex h-screen flex-col">
+        <!-- header -->
+        <div class="bg-purple-300">
+            <div class="flex w-[50%] py-5 justify-between ">
+                <p class="text-3xl">AniManga Search</p>
+                <div class="flex gap-5">
+                    <a href="">Anime</a>
+                    <a href="">Manga</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Character Header -->
+        <div class="h-[10%] mt-16 mb-8 bg-white">
+            <div id="character-name" class="flex ml-[25%] gap-3 flex-col">
+
+            </div>
+        </div>
+
+        <!-- Character Description -->
+        <div class="h-[80%] bg-gray-100">
+            <div class="flex">
+                <img id="character-img" src="assets/eren_img.jpg"
+                    class="w-[350px] h-[500px] absolute top-[8.5rem] left-[6.5rem]" alt="">
+
+                <div id="character-bio" class="flex ml-[25%] flex-col gap-0.5 text-[20px]">
+
+                </div>
+            </div>
+
+            <div id="character-desc" class="mt-4 ml-[25%] text-[20px] bg-amber-300 w-[65%] h-[25%] overflow-hidden">
+
+            </div>
+        </div>
+
+    </div>
+    <script src="character_detail.js"></script>
+</body>
+
+</html>

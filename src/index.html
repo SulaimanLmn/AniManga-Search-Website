@@ -8,7 +8,7 @@
 </head>
 
 <body class="bg-gray-100">
-    <div class="flex flex-col items-start mx-[7%]  h-screen gap-10 m-3.5">
+    <div class="flex flex-col items-start mx-[7%] h-max gap-10 m-3.5">
         <!-- header -->
         <div class="flex w-[50%] justify-between">
             <p class="text-3xl">AniManga Search</p>
@@ -25,7 +25,7 @@
                 <label for="">Search</label>
                 <div class="flex items-center gap-2 py-5 px-2 w-max h-9 rounded-md shadow-2xl bg-white">
                     <img src="./assets/search-icon.png" class="w-[16px] h-[16px]" alt="">
-                    <input class="border-none outline-none" type="text">
+                    <input id="searchbar" class="border-none outline-none" type="search">
                 </div>
 
 
@@ -35,15 +35,15 @@
             <div class="flex flex-col gap-1">
                 <label for="">Genres</label>
                 <div>
-                    <button id="dropdownDefaultButton"
+                    <button id="genres-dropdown-btn"
                         class=" w-44 shadow-2xl text-black bg-white  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex justify-between items-center"
-                        type="button" onclick="toggleDropdown()">
+                        type="button" onclick="toggleGenresDropdown()">
                         <p>Any</p>
                         <img class="w-2.5 h-2.5 ms-3" src="assets/down-arrow.png" />
 
                     </button>
 
-                    <div id="dropdown"
+                    <div id="genres-dropdown"
                         class="absolute p-2 mt-2 text-sm z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 ">
 
                         <div onclick="toggleCheck(this)"
@@ -67,13 +67,48 @@
                 </div>
 
             </div>
+
+            <!-- Years -->
+            <div class="flex flex-col gap-1">
+                <label for="">Years</label>
+                <div>
+                    <button id="years-dropdown-btn"
+                        class=" w-44 shadow-2xl text-black bg-white  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex justify-between items-center"
+                        type="button" onclick="toggleYearsDropdown()()">
+                        <p>Any</p>
+                        <img class="w-2.5 h-2.5 ms-3" src="assets/down-arrow.png" />
+
+                    </button>
+
+                    <div id="years-dropdown"
+                        class="absolute p-2 mt-2 text-sm z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 ">
+
+                        <div onclick="toggleCheck(this)"
+                            class="flex justify-between items-center p-2.5 cursor-pointer hover:bg-gray-100">
+                            <span>2001</span>
+                            <img src="assets/check.png" class="check-icon hidden w-3.5 h-3.5" alt="">
+                        </div>
+                        <div onclick="toggleCheck(this)"
+                            class="flex justify-between items-center p-2.5 cursor-pointer hover:bg-gray-100">
+                            <span>2002</span>
+                            <img src="assets/check.png" class="check-icon hidden w-3.5 h-3.5" alt="">
+                        </div>
+                        <div onclick="toggleCheck(this)"
+                            class="flex justify-between items-center p-2.5 cursor-pointer hover:bg-gray-100">
+                            <span>2003</span>
+                            <img src="assets/check.png" class="check-icon hidden w-3.5 h-3.5" alt="">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
         </div>
 
-        <div class="flex bg-amber-50">
-            <div class="flex">
-                <img src="" id="animeImg" alt="">
-                <p>Anime Name</p>
-            </div>
+        <!-- Anime List -->
+        <div id="anime-container" class="flex flex-wrap gap-5">
+
         </div>
         <script src="index.js"></script>
 </body>
