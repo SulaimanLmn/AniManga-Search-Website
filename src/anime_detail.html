@@ -7,78 +7,51 @@
 </head>
 
 <body class="bg-gray-100">
-
-    <div class="flex flex-col mb-20 relative">
-        <!-- banner -->
-        <div id="banner-container">
-
-        </div>
-
-
-        <div class="flex flex-col mx-[7%]">
-            <div class="flex gap-1">
-
-
-                <!-- anime image -->
-                <div id="anime-image-container">
-
-                </div>
-                <!-- description -->
-                <div id="description-container" class="flex flex-col gap-1 ml-[14.5rem] h-[200px] bg-white">
-
-
-
+    <!-- Loading indicator -->
+    <div id="loading-indicator" class="hidden fixed inset-0 flex items-center justify-center z-50">
+        <div class="relative">
+            <div style="width: 64px; height: 64px;" class="animate-spin">
+                <div
+                    class="absolute w-full h-full rounded-full border-8 border-solid border-blue-500 border-t-transparent">
                 </div>
             </div>
+        </div>
+    </div>
 
-            <!-- Aditional info -->
-            <div class="flex gap-4.5">
-                <div id="detail_container" class=" flex flex-col gap-5 w-[215px]  p-2.5 bg-white">
+    <!-- Main content container - initially hidden -->
+    <div id="main-content" class="hidden">
+        <div class="flex flex-col mb-20 relative">
+            <!-- banner -->
+            <div id="banner-container" class="w-full h-[200px] sm:h-[250px] md:h-[350px] bg-gray-200"></div>
 
+            <div class="flex flex-col mx-4 md:mx-[7%] mt-4 sm:mt-0">
+                <!-- image and description container -->
+                <div class="flex flex-col sm:flex-row gap-4 sm:gap-8">
+                    <!-- anime image -->
+                    <div id="anime-image-container" class="relative sm:-mt-32 z-10 flex justify-center sm:block"></div>
 
+                    <!-- description -->
+                    <div id="description-container"
+                        class="flex-1 flex flex-col gap-4 p-4 sm:p-6 bg-white rounded-lg shadow-lg sm:mt-4"></div>
                 </div>
 
-                <!-- Character -->
-                <div class="flex flex-col mt-5 w-screen gap-2 ">
-                    <p class="text-2xl">Characters</p>
-                    <div id="character-container" class="flex flex-wrap gap-5 justify-between">
-
-
-                        <!-- <div class="flex h-max gap[7rem] bg-amber-300"> -->
-
-                        <!-- <div class="flex">
-                                <img src="assets/eren.jpg" alt=""
-                                    class="w-[120px] h-[150px] rounded-tl-xs rounded-bl-xs">
-                                <div class="flex flex-col justify-between m-3">
-                                    <p>
-                                        Eren Yeager
-                                    </p>
-
-                                    <p>
-                                        Main
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="flex">
-                                <div class="flex flex-col justify-between m-3">
-                                    <p>Yuuki Kaji</p>
-
-                                    <p>Japanese</p>
-                                </div>
-                                <img src="assets/va.jpg" alt="" class="w-[120px] h-[150px]">
-
-                            </div>
-
-                        </div> -->
-
+                <!-- Additional info -->
+                <div class="flex flex-col lg:flex-row gap-4 lg:gap-8 mt-4 lg:mt-8">
+                    <!-- Details -->
+                    <div id="detail_container"
+                        class="flex flex-col gap-4 w-full lg:w-[215px] p-4 sm:p-6 bg-white rounded-lg shadow-lg">
                     </div>
 
-
-
+                    <!-- Characters -->
+                    <div class="flex-1 hidden" id="characters-section">
+                        <p class="text-xl sm:text-2xl font-semibold mb-4 text-gray-800">Characters</p>
+                        <div id="character-container" class="grid grid-cols-1 lg:grid-cols-2 gap-4"></div>
+                    </div>
                 </div>
             </div>
-            <script src="anime_detail.js"></script>
+        </div>
+    </div>
+    <script src="anime_detail.js"></script>
 </body>
 
 </html>
