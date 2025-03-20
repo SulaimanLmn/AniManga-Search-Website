@@ -61,6 +61,8 @@ async function fetchAniListCharacterDetails(characterName) {
             media {
                 edges {
                     node {
+                        id
+                        idMal
                         title {
                             romaji
                             english
@@ -194,13 +196,18 @@ async function fetchAniListCharacterDetails(characterName) {
 
       // Update appearances
       const appearances = character.media.edges
-        .filter((edge) => edge.node.title.english || edge.node.title.romaji)
+        .filter(
+          (edge) =>
+            (edge.node.title.english || edge.node.title.romaji) &&
+            edge.node.idMal
+        )
         .map((edge) => ({
           title: edge.node.title.english || edge.node.title.romaji,
           type: edge.node.type,
           format: edge.node.format,
           year: edge.node.seasonYear,
           role: edge.characterRole,
+          id: edge.node.idMal,
         }));
 
       appearancesList.innerHTML =
@@ -210,7 +217,9 @@ async function fetchAniListCharacterDetails(characterName) {
                 (app) => `
             <div class="py-4 mb-2 border-b last:border-b-0">
                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0">
-                    <div class="flex items-center gap-2">
+                    <div class="flex items-center gap-2 cursor-pointer hover:text-blue-600 transition-colors duration-300" onclick="window.location.href='${app.type.toLowerCase()}_detail.html?${app.type.toLowerCase()}Id=${
+                  app.id
+                }'">
                         <span class="inline-block px-2 py-1 text-xs font-medium bg-gray-100 rounded">${
                           app.type
                         }</span>

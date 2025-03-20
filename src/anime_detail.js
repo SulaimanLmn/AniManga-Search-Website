@@ -144,9 +144,11 @@ async function fetchAnimeDetails() {
 
         const characterDiv = `
           <div class="flex flex-col sm:flex-row bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-            <div class="flex w-full sm:w-1/2 cursor-pointer" onclick="window.location.href='character_detail.html?characterName=${
+            <div class="flex w-full sm:w-1/2 cursor-pointer" onclick="window.location.href='character_detail.html?characterName=${encodeURIComponent(
               character.character.name
-            }&characterImage=${character.character.images.jpg.image_url}'">
+            )}&characterImage=${encodeURIComponent(
+          character.character.images.jpg.image_url
+        )}'">
               <img src="${character.character.images.jpg.image_url}" alt=""
                   class="w-[100px] sm:w-[120px] h-[130px] sm:h-[150px] object-cover">
               <div class="flex flex-col justify-between p-2 sm:p-4 flex-1">
@@ -158,7 +160,12 @@ async function fetchAnimeDetails() {
                 }</p>
               </div>
             </div>
-            <div class="flex w-full sm:w-1/2 border-t sm:border-t-0 sm:border-l">
+            <div class="flex w-full sm:w-1/2 border-t sm:border-t-0 sm:border-l cursor-pointer" 
+                 onclick="window.location.href='voice_actor_detail.html?vaName=${encodeURIComponent(
+                   japaneseVoiceActor?.person?.name || ""
+                 )}&vaImage=${encodeURIComponent(
+          japaneseVoiceActor?.person?.images?.jpg?.image_url || ""
+        )}'">
               <div class="flex flex-col justify-between p-2 sm:p-4 flex-1">
                 <p class="font-medium text-sm sm:text-base text-gray-800 text-right">${
                   japaneseVoiceActor?.person?.name || "Unknown"
