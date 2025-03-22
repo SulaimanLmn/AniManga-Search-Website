@@ -217,7 +217,7 @@ async function fetchAniListCharacterDetails(characterName) {
                 (app) => `
             <div class="py-4 mb-2 border-b last:border-b-0">
                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0">
-                    <div class="flex items-center gap-2 cursor-pointer hover:text-blue-600 transition-colors duration-300" onclick="window.location.href='src/${app.type.toLowerCase()}_detail.html?${app.type.toLowerCase()}Id=${
+                    <div class="flex items-center gap-2 cursor-pointer hover:text-blue-600 transition-colors duration-300" onclick="window.location.href='${app.type.toLowerCase()}_detail.html?${app.type.toLowerCase()}Id=${
                   app.id
                 }'">
                         <span class="inline-block px-2 py-1 text-xs font-medium bg-gray-100 rounded">${
