@@ -56,7 +56,7 @@ function generateYearsDropdown() {
     };
     yearDiv.innerHTML = `
             <span>${year}</span>
-            <img src="assets/check.png" class="check-icon hidden w-3.5 h-3.5" alt="">
+            <img src="./src/assets/check.png" class="check-icon hidden w-3.5 h-3.5" alt="">
         `;
     yearsDropdown.appendChild(yearDiv);
   }
@@ -229,7 +229,7 @@ async function applyAllFilters() {
     data.data.forEach((anime) => {
       const animeCard = document.createElement("div");
       animeCard.innerHTML = `
-        <div class="w-[300px] bg-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-md cursor-pointer" onclick="window.location.href='anime_detail.html?animeId=${
+        <div class="w-[300px] bg-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-md cursor-pointer" onclick="window.location.href='src/anime_detail.html?animeId=${
           anime.mal_id
         }'">
           <img src="${anime.images.jpg.image_url}" 
@@ -245,7 +245,7 @@ async function applyAllFilters() {
               }</p>
               <p class="text-[14px]">${anime.status}</p>
               <div class="flex items-center w-max text-[13px] py-0.5 px-1.5 rounded-md bg-yellow-200 gap-1.5">
-                <img src="assets/star-icon.png" class="w-3.5 h-3.5" alt="Star Icon">
+                <img src="./src/assets/star-icon.png" class="w-3.5 h-3.5" alt="Star Icon">
                 <p>${anime.score != null ? anime.score : "Unrated"}</p>
               </div>
               <p class="text-[12px] line-clamp-1 text-gray-600">${

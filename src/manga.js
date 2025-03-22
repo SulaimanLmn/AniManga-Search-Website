@@ -220,7 +220,7 @@ async function applyAllFilters() {
     data.data.forEach((manga) => {
       const mangaCard = document.createElement("div");
       mangaCard.innerHTML = `
-                <div class="w-[300px] bg-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-md cursor-pointer" onclick="window.location.href='manga_detail.html?mangaId=${
+                <div class="w-[300px] bg-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-md cursor-pointer" onclick="window.location.href='src/manga_detail.html?mangaId=${
                   manga.mal_id
                 }'">
                     <img src="${manga.images.jpg.image_url}" 
