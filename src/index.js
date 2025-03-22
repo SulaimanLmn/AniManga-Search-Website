@@ -229,26 +229,26 @@ async function applyAllFilters() {
     data.data.forEach((anime) => {
       const animeCard = document.createElement("div");
       animeCard.innerHTML = `
-        <div class="flex flex-col w-full sm:w-[300px] h-[580px] gap-2 bg-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl" onclick="window.location.href='anime_detail.html?animeId=${
+        <div class="w-[300px] bg-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-md cursor-pointer" onclick="window.location.href='anime_detail.html?animeId=${
           anime.mal_id
         }'">
-          <img src="${
-            anime.images.jpg.image_url
-          }" class="w-full sm:w-[300px] h-[370px] rounded-t-md object-cover transition-transform duration-300 group-hover:scale-110" id="animeImg" alt="${
-        anime.title
-      }">
-          <div class="flex flex-col m-2.5">
-            <p class="text-[1.2rem] h-[70px] font-semibold">${anime.title}</p>
-            <div class="flex flex-col gap-1 text-[16px]">
-              <p>${
+          <img src="${anime.images.jpg.image_url}" 
+               class="w-[300px] h-[400px] rounded-t-md object-cover" 
+               alt="${anime.title}">
+          <div class="flex flex-col h-[200px] p-4">
+            <h3 class="text-[1.1rem] font-semibold mb-2 line-clamp-2">${
+              anime.title
+            }</h3>
+            <div class="flex flex-col gap-2 mt-auto">
+              <p class="text-[14px]">${
                 anime.episodes ? `${anime.episodes} episodes` : "Ongoing"
               }</p>
-              <p>${anime.status}</p>
-              <div class="flex items-center w-max text-[15px] py-0.5 px-1.5 rounded-md bg-yellow-200 gap-1.5">
-                <img src="assets/star-icon.png" class="w-4 h-4" alt="Star Icon">
+              <p class="text-[14px]">${anime.status}</p>
+              <div class="flex items-center w-max text-[13px] py-0.5 px-1.5 rounded-md bg-yellow-200 gap-1.5">
+                <img src="assets/star-icon.png" class="w-3.5 h-3.5" alt="Star Icon">
                 <p>${anime.score != null ? anime.score : "Unrated"}</p>
               </div>
-              <p class="text-[14px]">${
+              <p class="text-[12px] line-clamp-1 text-gray-600">${
                 anime.genres
                   ? anime.genres.map((genre) => genre.name).join(", ")
                   : "No genres available"

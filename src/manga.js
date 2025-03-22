@@ -220,30 +220,30 @@ async function applyAllFilters() {
     data.data.forEach((manga) => {
       const mangaCard = document.createElement("div");
       mangaCard.innerHTML = `
-                <div class="flex flex-col w-full sm:w-[280px] md:w-[300px] h-[500px] sm:h-[580px] gap-2 bg-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-md cursor-pointer" onclick="window.location.href='manga_detail.html?mangaId=${
+                <div class="w-[300px] bg-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-md cursor-pointer" onclick="window.location.href='manga_detail.html?mangaId=${
                   manga.mal_id
                 }'">
                     <img src="${manga.images.jpg.image_url}" 
-                         class="w-full h-[300px] sm:h-[370px] rounded-t-md object-cover transition-transform duration-300 group-hover:scale-110" 
+                         class="w-[300px] h-[400px] rounded-t-md object-cover" 
                          alt="${manga.title}">
-                    <div class="flex flex-col m-2 sm:m-2.5">
-                        <p class="text-[1rem] sm:text-[1.2rem] h-[60px] sm:h-[70px] font-semibold line-clamp-2 sm:line-clamp-none">${
+                    <div class="flex flex-col h-[200px] p-4">
+                        <h3 class="text-[1.1rem] font-semibold mb-2 line-clamp-2">${
                           manga.title
-                        }</p>
-                        <div class="flex flex-col gap-1 text-[14px] sm:text-[16px]">
-                            <p>${
+                        }</h3>
+                        <div class="flex flex-col gap-2 mt-auto">
+                            <p class="text-[14px]">${
                               manga.chapters
                                 ? `${manga.chapters} chapters`
                                 : "Ongoing"
                             }</p>
-                            <p>${manga.status}</p>
-                            <div class="flex items-center w-max text-[13px] sm:text-[15px] py-0.5 px-1.5 rounded-md bg-yellow-200 gap-1.5">
-                                <img src="assets/star-icon.png" class="w-3.5 h-3.5 sm:w-4 sm:h-4" alt="Star Icon">
+                            <p class="text-[14px]">${manga.status}</p>
+                            <div class="flex items-center w-max text-[13px] py-0.5 px-1.5 rounded-md bg-yellow-200 gap-1.5">
+                                <img src="assets/star-icon.png" class="w-3.5 h-3.5" alt="Star Icon">
                                 <p>${
                                   manga.score != null ? manga.score : "Unrated"
                                 }</p>
                             </div>
-                            <p class="text-[12px] sm:text-[14px] line-clamp-2">${
+                            <p class="text-[12px] line-clamp-1 text-gray-600">${
                               manga.genres
                                 ? manga.genres
                                     .map((genre) => genre.name)

@@ -9,7 +9,7 @@
 
 <body class="bg-gray-100">
     <div class="sticky top-0 left-0 right-0 bg-white shadow-lg z-40 mb-6">
-        <div class="flex items-center justify-between mx-[5%] sm:mx-[7%] py-3 sm:py-4">
+        <div class="flex items-center justify-between mx-[5%] sm:mx-[7%] lg:mx-[3%] py-3 sm:py-4">
             <div class="flex items-center gap-2">
                 <p class="text-xl sm:text-2xl md:text-3xl font-semibold text-blue-600">AniManga Search</p>
             </div>
@@ -21,7 +21,7 @@
             </div>
         </div>
     </div>
-    <div class="flex flex-col items-start mx-[5%] sm:mx-[7%] h-max gap-6 sm:gap-10">
+    <div class="flex flex-col items-start mx-[5%] sm:mx-[7%] lg:mx-[3%] h-max gap-6 sm:gap-10">
         <!-- filters -->
         <div class="flex flex-col md:flex-row justify-start gap-4 sm:gap-6 w-full">
             <!-- searchbar -->
@@ -72,7 +72,7 @@
         </div>
 
         <!-- Manga List -->
-        <div id="manga-container" class="flex flex-wrap gap-5 relative min-h-[400px] w-full">
+        <div id="manga-container" class="w-full min-h-[400px] relative">
             <!-- Loading indicator -->
             <div id="loading-indicator" class="hidden absolute inset-0 flex items-center justify-center">
                 <div class="relative">
@@ -85,7 +85,8 @@
             </div>
             <!-- Manga cards container -->
             <div id="manga-cards-container"
-                class="flex flex-wrap justify-center md:justify-start gap-4 sm:gap-5 w-full"></div>
+                class="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 sm:gap-6 lg:gap-4 items-center sm:items-start">
+            </div>
         </div>
     </div>
     <script src="manga.js"></script>
